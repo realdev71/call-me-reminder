@@ -1,0 +1,85 @@
+# Call Me Reminder App
+
+A modern, full-stack reminder application featuring automated AI voice calls. Built with **Next.js 14 (App Router)**, **FastAPI**, and **Vapi.ai**.
+
+![Dashboard Preview](frontend/public/window.svg)
+
+## Features
+
+- 🎙️ **AI Voice Calls**: Automated calls reminding you of your tasks.
+- 🎨 **Premium UI**: Dark-mode first design with shadcn/ui and Tailwind CSS.
+- ⚡ **Real-time Status**: Live updates for Scheduled, Completed, and Failed reminders.
+- 🔍 **Search & Filter**: Find reminders instantly.
+- ⏱️ **Countdowns**: Live timers for upcoming calls.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS v4, shadcn/ui
+- **Backend**: FastAPI, SQLAlchemy (Async), SQLite/PostgreSQL
+- **AI/Voice**: Vapi.ai Integration
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- Python 3.9+
+- Vapi.ai Account (for voice calls)
+
+### 1. Backend Setup
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# Configure Environment
+cp .env.example .env
+# Edit .env with your VAPI_API_KEY
+```
+
+Run the server:
+```bash
+python -m uvicorn main:app --reload
+```
+API Docs available at: `http://localhost:8000/docs`
+
+### 2. Frontend Setup
+
+```bash
+cd frontend
+npm install
+
+# Configure Environment (Optional dev defaults work out of the box)
+cp .env.example .env.local
+```
+
+Run the development server:
+```bash
+npm run dev
+```
+Open `http://localhost:3000` (or 3001 if 3000 is taken).
+
+## Configuration
+
+### Environment Variables
+
+**Backend (`backend/.env`):**
+- `VAPI_API_KEY`: Your Vapi.ai private API key.
+- `CORS_ORIGINS`: Comma-separated list of allowed origins (e.g., `http://localhost:3000`).
+
+**Frontend (`frontend/.env.local`):**
+- `BACKEND_URL`: URL of the FastAPI backend (default: `http://localhost:8000`).
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
