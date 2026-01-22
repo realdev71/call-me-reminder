@@ -2,7 +2,7 @@
 
 A modern, full-stack reminder application featuring automated AI voice calls. Built with **Next.js 14 (App Router)**, **FastAPI**, and **Vapi.ai**.
 
-![Dashboard Preview](frontend/public/window.svg)
+
 
 ## Features
 
@@ -71,6 +71,20 @@ Open `http://localhost:3000` (or 3001 if 3000 is taken).
 
 **Frontend (`frontend/.env.local`):**
 - `BACKEND_URL`: URL of the FastAPI backend (default: `http://localhost:8000`).
+
+## Deployment
+
+### Backend (Docker/Render/Railway)
+
+1.  **Build**: Use a `Dockerfile` to containerize the FastAPI app.
+2.  **Env Vars**: Set `VAPI_API_KEY` and `CORS_ORIGINS` in your cloud provider.
+3.  **Run**: Expose port 8000.
+
+### Frontend (Vercel/Netlify)
+
+1.  **Build**: Connect your repo to Vercel.
+2.  **Env Vars**: Set `BACKEND_URL` to your deployed backend URL (e.g., `https://my-api.onrender.com`).
+3.  **Deploy**: Vercel handles the build and edge routing automatically.
 
 ## Contributing
 
