@@ -25,6 +25,7 @@ A modern, full-stack reminder application featuring automated AI voice calls. Bu
 - Node.js 18+
 - Python 3.9+
 - Vapi.ai Account (for voice calls)
+    - *Note: You do NOT need a Twilio API key in this app. Configure your Twilio numbers directly in the Vapi Dashboard.*
 
 ### 1. Backend Setup
 
