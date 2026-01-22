@@ -1,0 +1,27 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend (redundant but safe)
+node_modules/
+.next/
