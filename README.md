@@ -61,6 +61,33 @@ npm run dev
 ```
 Open `http://localhost:3000` (or 3001 if 3000 is taken).
 
+## Local Testing Flow
+
+We have implemented a **Mock Mode** to verify the end-to-end flow without making actual calls/spending credits.
+
+1.  **Configure Mock Key**:
+    In `backend/.env`, set:
+    ```env
+    VAPI_API_KEY=your_vapi_api_key_here
+    ```
+    *The backend detects this specific placeholder string and simulates a successful call.*
+
+2.  **Start Servers**:
+    Ensure both backend (`uvicorn`) and frontend (`npm run dev`) are running.
+
+3.  **Create Reminder**:
+    -   Go to the dashboard.
+    -   Click **New Reminder**.
+    -   Set title to "Test Flow", Phone to `+15555555555`.
+    -   Set time to **2 minutes from now**.
+    -   Click **Create**.
+
+4.  **Verify**:
+    -   See the reminder in the **Scheduled** tab.
+    -   Wait 2 minutes.
+    -   The status will automatically change to **Completed** (green badge).
+    -   (Optional) Check backend logs to see: `MOCK CALL TRIGGERED: To +15555555555...`
+
 ## Configuration
 
 ### Environment Variables
